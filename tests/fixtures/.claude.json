@@ -1,0 +1,23 @@
+{
+  "numStartups": 42,
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/home/dev"]
+    }
+  },
+  "projects": {
+    "/home/dev/webapp": {
+      "allowedTools": [],
+      "mcpServers": {
+        "playwright": {
+          "command": "npx",
+          "args": ["-y", "@playwright/mcp"]
+        }
+      }
+    },
+    "/home/dev/api": {
+      "mcpServers": {}
+    }
+  }
+}

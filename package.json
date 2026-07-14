@@ -1,0 +1,61 @@
+{
+  "name": "claudedeck",
+  "version": "0.1.0",
+  "description": "Local-first control deck for Claude Code: cost attribution across project/date/model/subagent/MCP server, a skills & hooks editor, and portable config snapshots — nothing leaves your machine.",
+  "keywords": [
+    "claude",
+    "claude-code",
+    "cost",
+    "usage",
+    "tokens",
+    "dashboard",
+    "mcp",
+    "local-first",
+    "cli",
+    "developer-tools"
+  ],
+  "license": "MIT",
+  "author": "JaydenCJ",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaydenCJ/claudedeck.git"
+  },
+  "homepage": "https://github.com/JaydenCJ/claudedeck#readme",
+  "bugs": {
+    "url": "https://github.com/JaydenCJ/claudedeck/issues"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "bin": {
+    "claudedeck": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "README.zh.md",
+    "README.ja.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "demo": "npm run build && node dist/cli.js stats --dir tests/fixtures/claude-home",
+    "build:binary": "bun build --compile ./src/cli.ts --outfile claudedeck",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "dependencies": {
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.1.0"
+  }
+}
